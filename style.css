@@ -414,51 +414,68 @@ ul.menu {
   padding: 40px;
   position: relative;
   display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-between;
+  align-items: center; /* Align items to the top */
 }
 
 .footer::before {
   position: absolute;
   content: "";
   display: block;
-  background-color: rgba(0, 0, 36, 0.8);
+  background-color: rgba(14, 14, 29, 0.8);
   top: 0;
   left: 0;
   bottom: 0;
   right: 0;
+  z-index: 1;
 }
 
 .footer .links {
   position: relative;
   color: #fff;
-  flex: 1;
+  flex-basis: 30%; /* Make each column roughly the same width */
+  max-width: 30%;
   display: flex;
-  flex-flow: column;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+  padding-left: 100px;
+  z-index: 2;
+  text-align: left; /* Ensure text aligns to the left */
 }
 
 .links ul {
   list-style-type: none;
+  padding: 0;
 }
 
 .links h3 {
-  font-family: Barlow Condensed;
+  font-family: "Barlow Condensed", sans-serif;
   font-weight: normal;
   font-size: 23px;
   margin-bottom: 15px;
 }
 
 .links li {
-  font-family: Roboto;
+  font-family: "Roboto", sans-serif;
   cursor: pointer;
   padding: 15px 0;
 }
 
 .links li:hover {
   color: #ffa801;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .footer {
+    flex-direction: column;
+    height: auto;
+    padding: 20px;
+  }
+
+  .footer .links {
+    max-width: 100%; /* Full width on smaller screens */
+    margin-bottom: 20px;
+  }
 }
 
 /*==========================Responsive=============================*/
